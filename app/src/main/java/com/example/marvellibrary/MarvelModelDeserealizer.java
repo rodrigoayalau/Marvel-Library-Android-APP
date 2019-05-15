@@ -7,15 +7,17 @@ public class MarvelModelDeserealizer {
     private String copyright;
     private int total;
     private String name;
+    private String description;
 
     public MarvelModelDeserealizer() {}
 
-    public MarvelModelDeserealizer(int code, String status, String copyright, int total, String name) {
+    public MarvelModelDeserealizer(int code, String status, String copyright, int total, String name, String description) {
         this.code = code;
         this.status = status;
         this.copyright = copyright;
         this.total = total;
         this.name = name;
+        this.description = description;
     }
 
     public int getCode() {
@@ -52,5 +54,13 @@ public class MarvelModelDeserealizer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
