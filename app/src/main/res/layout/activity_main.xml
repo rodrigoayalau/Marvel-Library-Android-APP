@@ -39,8 +39,7 @@
     <ImageView
         android:id="@+id/imgHero"
         android:layout_width="match_parent"
-        android:layout_height="311dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[10]" />
+        android:layout_height="311dp" />
 
     <TextView
         android:id="@+id/txtJsonResponse"

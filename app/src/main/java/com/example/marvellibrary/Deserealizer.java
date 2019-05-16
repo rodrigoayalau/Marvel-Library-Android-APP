@@ -18,8 +18,10 @@ public class Deserealizer implements JsonDeserializer<MarvelModelDeserealizer> {
         int total = json.getAsJsonObject().get("data").getAsJsonObject().get("total").getAsInt();
         String name = json.getAsJsonObject().get("data").getAsJsonObject().get("results").getAsJsonArray().get(0).getAsJsonObject().get("name").getAsString();
         String description = json.getAsJsonObject().get("data").getAsJsonObject().get("results").getAsJsonArray().get(0).getAsJsonObject().get("description").getAsString();
+        String path = json.getAsJsonObject().get("data").getAsJsonObject().get("results").getAsJsonArray().get(0).getAsJsonObject().get("thumbnail").getAsJsonObject().get("path").getAsString();
+        String extension = json.getAsJsonObject().get("data").getAsJsonObject().get("results").getAsJsonArray().get(0).getAsJsonObject().get("thumbnail").getAsJsonObject().get("extension").getAsString();;
 
-        MarvelModelDeserealizer marvel = new MarvelModelDeserealizer(code, status, copyright, total, name, description);
+        MarvelModelDeserealizer marvel = new MarvelModelDeserealizer(code, status, copyright, total, name, description, path, extension);
         return marvel;
 
     }

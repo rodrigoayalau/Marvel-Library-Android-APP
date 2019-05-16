@@ -1,5 +1,7 @@
 package com.example.marvellibrary;
 
+import com.google.gson.annotations.SerializedName;
+
 public class MarvelModelDeserealizer {
 
     private int code;
@@ -8,16 +10,20 @@ public class MarvelModelDeserealizer {
     private int total;
     private String name;
     private String description;
+    private String path;
+    private String extension;
 
     public MarvelModelDeserealizer() {}
 
-    public MarvelModelDeserealizer(int code, String status, String copyright, int total, String name, String description) {
+    public MarvelModelDeserealizer(int code, String status, String copyright, int total, String name, String description, String path, String extension) {
         this.code = code;
         this.status = status;
         this.copyright = copyright;
         this.total = total;
         this.name = name;
         this.description = description;
+        this.path = path;
+        this.extension = extension;
     }
 
     public int getCode() {
@@ -56,11 +62,23 @@ public class MarvelModelDeserealizer {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
+    public String getPath() {
+        return path;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
     }
 }

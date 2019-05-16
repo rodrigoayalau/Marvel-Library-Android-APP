@@ -3,11 +3,14 @@ package com.example.marvellibrary;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         btnSearchHero = findViewById(R.id.btnSearchHero);
         txtNameHero = findViewById(R.id.txtNameHero);
         txtDescHero = findViewById(R.id.txtDescHero);
+        imgHero = findViewById(R.id.imgHero);
         txtJson = findViewById(R.id.txtJsonResponse);
+
 
         builder = new GsonBuilder();
         builder.registerTypeAdapter(MarvelModelDeserealizer.class, new Deserealizer());
@@ -48,11 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://gateway.marvel.com:443/v1/public/")
                 .addConverterFactory(GsonConverterFactory.create(builder.create()))
                 .build();
-
-
-
-
-
 
         btnSearchHero.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 txtNameHero.setText(nombre);
                 String description = response.body().getDescription();
                 txtDescHero.setText(description);
+                String img = response.body().getPath();
+                String ext = response.body().getExtension();
+                String imgC = img + "." + ext;
+                Picasso.get().load(imgC).into((ImageView) imgHero);
 
 
                 String jres = response.body().toString();
