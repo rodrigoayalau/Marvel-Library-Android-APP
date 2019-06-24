@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MarvelLibrary.iml" filepath="$PROJECT_DIR$/MarvelLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Marvel-Library-Android-APP.iml" filepath="$PROJECT_DIR$/Marvel-Library-Android-APP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
